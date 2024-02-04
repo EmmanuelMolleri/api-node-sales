@@ -6,3 +6,7 @@ a common Node api to show my abilities
 - add unit tests
 - create new endpoints and features
 
+**Existing implementations**
+- Morgan: for middleware loggin
+- sequelize: for database operations
+- cors/jwt: for authorization 
