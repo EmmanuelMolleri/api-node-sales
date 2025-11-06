@@ -1,4 +1,4 @@
-const { productPriceUnits } = require("../../config");
+const { productPriceUnits } = require("../../shared/config/config");
 module.exports = {
   type: "object",
   properties: {
@@ -19,5 +19,6 @@ module.exports = {
       enum: Object.values(productPriceUnits),
     },
   },
+  required: ["name", "description", "image", "price"],
   additionalProperties: false,
 };

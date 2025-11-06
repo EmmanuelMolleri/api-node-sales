@@ -1,65 +1,75 @@
 const { DataTypes } = require("sequelize");
-const { productPriceUnits } = require("../../config");
+const { roles } = require("../../shared/config/config");
 
-const ProductModel = {
+const UserModel = {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
     primaryKey: true,
   },
-  name: {
+  username: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    unique: true,
+  },
+  email: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    unique: true,
+  },
+  password: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  description: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  image: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-  price: {
+  age: {
     type: DataTypes.INTEGER,
     allowNull: false,
   },
-  priceUnit: {
+  role: {
     type: DataTypes.STRING,
     allowNull: false,
-    defaultValue: productPriceUnits.DOLLAR,
+    defaultValue: roles.USER
   },
+  firstName: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+  lastName: {
+    type: DataTypes.STRING,
+    allowNull: false
+  }
 };
 
 module.exports = {
   initialise: (sequelize) => {
-    this.model = sequelize.define("product", ProductModel)
+    this.model = sequelize.define("user", UserModel);
   },
 
-  createProduct: (user) => {
+  createUser: (user) => {
     return this.model.create(user);
   },
 
-  findProduct: (query) => {
+  findUser: (query) => {
     return this.model.findOne({
       where: query,
     });
   },
 
-  updateProduct: (query, updatedValue) => {
+  updateUser: (query, updatedValue) => {
     return this.model.update(updatedValue, {
       where: query,
     });
   },
 
-  findAllProducts: (query) => {
+  findAllUsers: (query) => {
     return this.model.findAll({
       where: query
     });
   },
 
-  deleteProduct: (query) => {
+  deleteUser: (query) => {
     return this.model.destroy({
       where: query
     });
   }
-}
+};

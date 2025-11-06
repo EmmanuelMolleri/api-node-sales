@@ -1,4 +1,4 @@
-const { roles } = require('../../config');
+const { roles } = require('../../shared/config/config');
 
 module.exports = {
   type: 'object',

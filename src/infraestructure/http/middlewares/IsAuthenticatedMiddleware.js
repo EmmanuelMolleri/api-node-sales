@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-const { jwtSecret } = require("../../../config");
+const { jwtSecret } = require("../../../shared/config/config");
 
 module.exports = {
   check: (req, res, next) => {

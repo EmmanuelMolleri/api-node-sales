@@ -3,7 +3,7 @@ const crypto = require("crypto");
 
 const UserModel = require("../../../domain/entities/User");
 
-const { roles, jwtSecret, jwtExpirationInSeconds } = require("../../../config");
+const { roles, jwtSecret, jwtExpirationInSeconds } = require("../../../shared/config/config");
 
 const generateAccessToken = (username, userId) => {
   return jwt.sign(
@@ -41,7 +41,7 @@ module.exports = {
       .then((user) => {
         const accessToken = generateAccessToken(payload.username, user.id);
 
-        return res.status(200).json({
+        return res.status(201).json({
           status: true,
           data: {
             user: user.toJSON(),

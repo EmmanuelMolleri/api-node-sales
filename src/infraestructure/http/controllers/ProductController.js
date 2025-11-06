@@ -1,4 +1,4 @@
-const ProductModel = require("../../common/models/Product");
+const ProductModel = require("../../../domain/entities/Product");
 
 module.exports = {
   getAllProducts: (req, res) => {
