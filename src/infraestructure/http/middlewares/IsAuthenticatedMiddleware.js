@@ -5,7 +5,6 @@ module.exports = {
   check: (req, res, next) => {
     const authHeader = req.headers['authorization'];
 
-    // 401 Unauthorized error
     if (!authHeader) {
       return res.status(401).json({
         status: false,
@@ -15,7 +14,6 @@ module.exports = {
       });
     }
 
-    // 401 Unauthorized error
     if (!authHeader.startsWith('Bearer')) {
       return res.status(401).json({
         status: false,
@@ -27,7 +25,6 @@ module.exports = {
 
     const token = authHeader.split(' ')[1];
 
-    // Unauthorized error
     if (!token) {
       return res.status(401).json({
         status: false,

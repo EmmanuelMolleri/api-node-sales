@@ -1,14 +1,11 @@
 const router = require("express").Router();
 
-// Controller Imports
 const ProductController = require("../controllers/ProductController");
 
-// Middleware Imports
 const isAuthenticatedMiddleware = require("../middlewares/IsAuthenticatedMiddleware");
 const SchemaValidationMiddleware = require("../middlewares/SchemaValidationMiddleware");
 const CheckPermissionMiddleware = require("../middlewares/CheckPermissionMiddleware");
 
-// JSON Schema Imports for payload verification
 const createProductPayload = require("../../../application/dto/CreateProductPayload");
 const updateProductPayload = require("../../../application/dto/UpdateProductPayload");
 const { roles } = require("../../../shared/config/config");

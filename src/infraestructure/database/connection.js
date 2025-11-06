@@ -17,7 +17,6 @@ const sequelize = new Sequelize({
   } : {}
 });
 
-// Adicionar métodos que o app.js espera
 const database = {
   sequelize,
   authenticate: async () => {
