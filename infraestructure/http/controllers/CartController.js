@@ -1,6 +1,6 @@
-const CartItemModel = require("../../common/models/CartItem");
-const CartModel = require("../../common/models/Cart");
-const ProductModel = require("../../common/models/Product");
+const CartItemModel = require("../../../domain/entities/CartItem");
+const CartModel = require("../../../domain/entities/Cart");
+const ProductModel = require("../../../domain/entities/Product");
 
 module.exports = {
   addProductToCart: async (req, res) => {

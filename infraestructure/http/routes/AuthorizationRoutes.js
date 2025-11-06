@@ -2,7 +2,7 @@ const router = require("express").Router();
 
 const AuthorizationController = require("./controllers/AuthorizationController");
 
-const SchemaValidationMiddleware = require("../common/middlewares/SchemaValidationMiddleware");
+const SchemaValidationMiddleware = require("../../../common/middlewares/SchemaValidationMiddleware");
 
 const registerPayload = require("./schemas/registerPayload");
 const loginPayload = require("./schemas/loginPayload");

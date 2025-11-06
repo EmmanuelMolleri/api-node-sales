@@ -2,10 +2,10 @@ const router = require("express").Router();
 
 const CartController = require("./controllers/CartController");
 
-const isAuthenticatedMiddleware = require("../common/middlewares/IsAuthenticatedMiddleware");
-const SchemaValidationMiddleware = require("../common/middlewares/SchemaValidationMiddleware");
+const isAuthenticatedMiddleware = require("../../../common/middlewares/IsAuthenticatedMiddleware");
+const SchemaValidationMiddleware = require("../../../common/middlewares/SchemaValidationMiddleware");
 
-const addItemToCartPaylod = require("./schemas/addItemToCartPayload");
+const addItemToCartPaylod = require("../../../cart/schemas/addItemToCartPayload");
 
 router.post(
     "/",

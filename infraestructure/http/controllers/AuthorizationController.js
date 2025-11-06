@@ -1,9 +1,9 @@
 const jwt = require("jsonwebtoken");
 const crypto = require("crypto");
 
-const UserModel = require("../../common/models/User");
+const UserModel = require("../../../domain/entities/User");
 
-const { roles, jwtSecret, jwtExpirationInSeconds } = require("../../config");
+const { roles, jwtSecret, jwtExpirationInSeconds } = require("../../../config");
 
 const generateAccessToken = (username, userId) => {
   return jwt.sign(
